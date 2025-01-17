@@ -36,10 +36,7 @@ const UseState: FC<UseStateProps> = () => {
       <div className="flex flex-col items-center bg-white p-5 my-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <div className="flex text-blue-800 items-center my-5">
           {/* Decrement Button */}
-          <button
-            onClick={DecrementCounter}
-            className="mx-2 border-solid border-black rounded-full border-2 p-3 hover:bg-gray-200 transition-colors duration-200"
-          >
+          <button onClick={DecrementCounter} className="rounded-full p-5 mx-3">
             <Minus />
           </button>
 
@@ -47,10 +44,7 @@ const UseState: FC<UseStateProps> = () => {
           <p className="text-2xl font-bold">{count}</p>
 
           {/* Increment Button */}
-          <button
-            onClick={IncrementCounter}
-            className="mx-2 border-solid border-black rounded-full border-2 p-3 hover:bg-gray-200 transition-colors duration-200"
-          >
+          <button onClick={IncrementCounter} className="rounded-full p-5 mx-3">
             <Plus />
           </button>
         </div>

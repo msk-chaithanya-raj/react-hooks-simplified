@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* General body styles */
+  body {
+    @apply bg-gray-100 text-gray-900 font-sans leading-relaxed;
+  }
+
+  /* Default styling for div */
+  div {
+    @apply p-4 m-0; /* Padding and margin reset */
+  }
+
+  /* Default styling for h1 */
+  h1 {
+    @apply text-4xl font-bold; /* Font size, weight, and color */
+  }
+
+  /* Default styling for section */
+  section {
+    @apply my-6; /* Margin for spacing */
+  }
+
+  /* Default styling for main */
+  main {
+    @apply p-6 bg-white rounded-lg shadow-lg; /* Padding, background, rounded corners, shadow */
+  }
+
+  /* Default styling for button */
+  button {
+    @apply px-4 py-2 mx-2 bg-blue-600 text-white rounded-md border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50; /* Button styles */
+  }
+
+  /* Hover effect for buttons */
+  button:hover {
+    @apply bg-blue-700;
+  }
+
+  /* Focus effect for buttons */
+  button:focus {
+    @apply ring-4 ring-blue-300;
+  }
+}
