@@ -7,10 +7,12 @@ interface AppProps {}
 
 const App: FC<AppProps> = ({}) => {
   return (
-    <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="/use-state" Component={UseState} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/use-state" Component={UseState} />
+      </Routes>
+    </>
   );
 };
 

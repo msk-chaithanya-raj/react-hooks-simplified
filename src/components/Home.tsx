@@ -6,7 +6,7 @@ interface HomeProps {}
 
 const Home: FC<HomeProps> = ({}) => {
   return (
-    <>
+    <main>
       <Introduction />
       <h1>Sections</h1>
       <ul>
@@ -14,7 +14,7 @@ const Home: FC<HomeProps> = ({}) => {
           <Link to="/use-state">Use State</Link>
         </li>
       </ul>
-    </>
+    </main>
   );
 };
 
