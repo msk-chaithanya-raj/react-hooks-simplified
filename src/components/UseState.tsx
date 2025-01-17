@@ -1,45 +1,59 @@
 import { FC, useState } from "react";
 import { Minus, Plus } from "lucide-react";
 
+// Interface for component props (empty as no props are passed here)
 interface UseStateProps {}
 
-const UseState: FC<UseStateProps> = ({}) => {
-  const [count, setCount] = useState(() => {
-    return 0;
-  });
+const UseState: FC<UseStateProps> = () => {
+  // Initializing state using useState hook
+  const [count, setCount] = useState<number>(0);
 
-  const IncrementCounter = () => {
-    setCount((prevState) => prevState + 1);
-  };
-  const DecrementCounter = () => {
-    setCount((prevState) => prevState - 1);
-  };
+  // Increment and Decrement counter functions
+  const IncrementCounter = () => setCount((prevState) => prevState + 1);
+  const DecrementCounter = () => setCount((prevState) => prevState - 1);
+
   return (
-    <div className="flex flex-col h-full w-full p-5">
-      <h1 className="text-4xl font-sans font-bold my-5">
-        useState in React hooks
+    <div className="flex flex-col items-center justify-center h-full w-full p-5">
+      {/* Heading */}
+      <h1 className="text-4xl font-sans font-bold my-5 text-center">
+        useState in React Hooks
       </h1>
-      <p className="text-xl my-3">
-        The useState hook in React enables state management within functional
-        components, allowing developers to declare and update state variables
-        seamlessly.
+
+      {/* Description */}
+      <p className="text-xl my-3 text-center">
+        The <code className="font-semibold text-blue-700">useState</code> hook
+        in React enables state management within functional components, allowing
+        developers to declare and update state variables seamlessly.
       </p>
-      <h3 className="text-2xl font-sanss my-5">Implementing useState hook</h3>
-      <p className="text-blue-900 text-xl">Counter</p>
-      <div className="flex text-blue-800 items-center my-5">
-        <button
-          onClick={DecrementCounter}
-          className="mx-2 border-solid border-black rounded-full border-2 p-2"
-        >
-          <Minus />
-        </button>
-        <p>{count}</p>
-        <button
-          onClick={IncrementCounter}
-          className="mx-2 border-solid border-black rounded-full border-2 p-2"
-        >
-          <Plus />
-        </button>
+
+      {/* Section heading */}
+      <h3 className="text-2xl font-sans my-5">Implementing useState Hook</h3>
+
+      {/* Counter Section */}
+      <p className="text-blue-900 text-xl text-center">Counter</p>
+
+      {/* Counter card with hover effects */}
+      <div className="flex flex-col items-center bg-white p-5 my-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+        <div className="flex text-blue-800 items-center my-5">
+          {/* Decrement Button */}
+          <button
+            onClick={DecrementCounter}
+            className="mx-2 border-solid border-black rounded-full border-2 p-3 hover:bg-gray-200 transition-colors duration-200"
+          >
+            <Minus />
+          </button>
+
+          {/* Display Counter */}
+          <p className="text-2xl font-bold">{count}</p>
+
+          {/* Increment Button */}
+          <button
+            onClick={IncrementCounter}
+            className="mx-2 border-solid border-black rounded-full border-2 p-3 hover:bg-gray-200 transition-colors duration-200"
+          >
+            <Plus />
+          </button>
+        </div>
       </div>
     </div>
   );
